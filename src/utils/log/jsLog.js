@@ -61,6 +61,15 @@ export default class jsLog {
             let errorStack = errorObj ? errorObj.stack : null
             siftAndMakeUpMessage(errorMsg, url, lineNumber, columnNumber, errorStack)
         }
+        window.onunhandledrejection = (event) => {
+            /** @type {string} */
+            let errorMessage = ""
+            /** @type {string} */
+            let th_field = ""
+            th_field = "object" == typeof event.reason ? (errorMessage = event.reason.message, event.reason.stack) : (errorMessage = event.reason, "")
+            let url = util.o
+            th_field ? siftAndMakeUpMessage(errorMessage, url, 0, 0, "UncaughtInPromiseError: " + th_field)
+        }
     }
 
     /**
