@@ -68,7 +68,7 @@ export default class jsLog {
             let th_field = ""
             th_field = "object" == typeof event.reason ? (errorMessage = event.reason.message, event.reason.stack) : (errorMessage = event.reason, "")
             let url = util.o
-            th_field ? siftAndMakeUpMessage(errorMessage, url, 0, 0, "UncaughtInPromiseError: " + th_field)
+            th_field ? siftAndMakeUpMessage(errorMessage, url, 0, 0, "UncaughtInPromiseError: " + th_field) : null
         }
     }
 
