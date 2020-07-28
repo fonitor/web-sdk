@@ -1,0 +1,19 @@
+{
+  "name": "fonitor-web",
+  "version": "1.0.0",
+  "description": "lin",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fonitor/web-sdk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fonitor/web-sdk/issues"
+  },
+  "homepage": "https://github.com/fonitor/web-sdk#readme"
+}
