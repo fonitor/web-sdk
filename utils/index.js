@@ -4,6 +4,7 @@ import Util from './util/index'
 import jsLog from './log/jsLog'
 import rescourceLog from './log/rescourceLog'
 import httpLog from './log/httpLog'
+import pageLog from './log/page'
 import Queue from './queue'
 
 let util = null
@@ -16,7 +17,7 @@ export default class Monitor {
      */
     constructor(options) {
         // 初始化框架基础参数
-        this.options = (options === null || options === undefined || options === "") ?  options : {}
+        this.options = (options === null || options === undefined || options === "") ? options : {}
 
         let utilConfig = {
             monitorUser: this.options.monitorUser || {},
@@ -45,7 +46,7 @@ export default class Monitor {
         // 存储ip地址
         util.getIp()
     }
-    
+
     /**
      * 运行监听
      */
@@ -56,8 +57,11 @@ export default class Monitor {
         rescourceLog.getInstance().recordResourceError()
         // http 请求监控
         httpLog.getInstance().recordHttpError()
-       
+        // 页面监控
+        pageLog.getInstance().pagePerformance()
+        // pv uv监控
 
+        // mv 半自动化埋点（支持热区埋点）
     }
 
     /**
