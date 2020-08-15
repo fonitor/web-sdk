@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/fonitor/web-sdk/issues"
   },
-  "homepage": "https://github.com/fonitor/web-sdk#readme"
+  "homepage": "https://github.com/fonitor/web-sdk#readme",
+  "dependencies": {
+    "rollup": "^2.25.0",
+    "rollup-plugin-serve": "^1.0.3"
+  }
 }
