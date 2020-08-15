@@ -6,6 +6,7 @@ import rescourceLog from './log/rescourceLog'
 import httpLog from './log/httpLog'
 import pageLog from './log/page'
 import Queue from './queue/index'
+import '@babel/polyfill'
 
 let util = null
 
