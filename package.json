@@ -5,6 +5,7 @@
   "main": ".eslintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf lib && rollup -c -w",
     "dev": "rollup -c -w"
   },
   "repository": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/fonitor/web-sdk#readme",
   "dependencies": {
+    "rimraf": "^3.0.2",
     "rollup": "^2.25.0",
     "rollup-plugin-serve": "^1.0.3"
   }
