@@ -5,7 +5,7 @@ import jsLog from './log/jsLog'
 import rescourceLog from './log/rescourceLog'
 import httpLog from './log/httpLog'
 import pageLog from './log/page'
-import Queue from './queue'
+import Queue from './queue/index'
 
 let util = null
 

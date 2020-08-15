@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import Util from "../util"
+import Util from "../util/index"
 import * as error from '../config/index'
 
 const util = Util.getInstance(),

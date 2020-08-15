@@ -1,5 +1,5 @@
 import axios from 'axios'
-import * as error from '../config'
+import * as error from '../config/index'
 import Qs from 'qs'
 
 // 创建axios实例

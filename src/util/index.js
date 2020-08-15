@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 /**
  * 工具类
  */
@@ -262,18 +260,6 @@ export default class Util {
         }
     }
 
-    /**
-     * 修改url指定参数
-     * @param {*} paramName 
-     * @param {*} replaceWith 
-     */
-    replaceParamVal(paramName, replaceWith) {
-        var oUrl = location.href.toString();
-        var re = eval('/(' + paramName + '=)([^&]*)/gi');
-        location.href = oUrl.replace(re, paramName + '=' + replaceWith);
-        return location.href;
-    }
-
 
     /**
      * 获取唯一uuid
@@ -444,5 +430,3 @@ export default class Util {
         return logObj
     }
 }
-
-/* eslint-enable */
