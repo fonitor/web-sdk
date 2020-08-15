@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import Util from "../util/index"
 import * as error from '../config/index'
 
@@ -734,5 +732,3 @@ export default class httpLog {
         window.fetch.polyfill = true;
     }
 }
-
-/* eslint-enable */

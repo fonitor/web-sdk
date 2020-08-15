@@ -1,4 +1,3 @@
-/* eslint-disable */
 import Util from '../util/index'
 const util = Util.getInstance()
 
@@ -127,5 +126,3 @@ export default class Queue {
     }
 
 }
-
-/* eslint-enable */

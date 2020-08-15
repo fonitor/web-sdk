@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import Util from './util/index'
 import jsLog from './log/jsLog'
 import rescourceLog from './log/rescourceLog'
@@ -74,5 +72,3 @@ export default class Monitor {
     }
 
 }
-
-/* eslint-enable */
