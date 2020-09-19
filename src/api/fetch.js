@@ -1,10 +1,10 @@
 import axios from 'axios'
-import * as error from '../config/index'
+import * as error from '../config'
 import Qs from 'qs'
 
 // 创建axios实例
 const service = axios.create({
-    baseURL: 'http://www.guaishou.com', // api的base_url
+    baseURL: 'http://localhost:9001', // api的base_url
     timeout: 5000                  // 请求超时时间
 })
 

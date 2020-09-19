@@ -1,4 +1,4 @@
-import Util from "../util/index"
+import Util from "../util"
 import * as error from '../config/index'
 
 const util = Util.getInstance()
@@ -42,6 +42,7 @@ export default class rescourceLog {
                 default:
                     sourceUrl = e.target.src || ''
             }
+            if (!sourceUrl) return
             if (sourceUrl) sourceUrl = util.b64EncodeUnicode(encodeURIComponent(sourceUrl))
 
             let resoureErrorInfo = this.resourceErrorInfo(error.RESOURCE_LOAD, sourceUrl, typeName)

@@ -1,5 +1,8 @@
+/* eslint-disable */
 import Util from '../util/index'
+import { saveLog } from '../api/logApi'
 const util = Util.getInstance()
+
 
 /**
  * 定时任务，避免浏览器并发
@@ -97,7 +100,8 @@ export default class Queue {
             }, 50)
         }
         for (clearTimeout(this.requestTimmer), this.requestTimmer = null; this.synNum < this.synRequestNum && (e = this.requestQueue.pop()); this.synNum++) {
-            e.handleLog(this.reduceSynNumFun)
+            // e.handleLog(this.reduceSynNumFun)
+            this.handleLog(e)
         }
         // 执行完如果还有数据则继续执行（放到宏任务）
         !!this.requestQueue.length && (this.requestTimmer = setTimeout(() => {
@@ -125,4 +129,16 @@ export default class Queue {
         return this
     }
 
+    /**
+     * 发送请求
+     * @param {*} e 
+     */
+    handleLog(e) {
+        saveLog(e).then(res => {
+            console.log(res)
+        })
+    }
+
 }
+
+/* eslint-enable */

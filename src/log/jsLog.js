@@ -1,7 +1,9 @@
-import Util from "../util/index"
+import Util from "../util"
 import * as error from '../config/index'
+import Queue from "../queue"
 
 const util = Util.getInstance()
+const queue = Queue.getInstance('web')
 
 export default class jsLog {
 
@@ -34,7 +36,8 @@ export default class jsLog {
                 errorType = errorStackStr.split(": ")[0].replace('"', "");
             }
             let javaScriptErrorInfo = this.javaScriptErrorInfo(error.JS_ERROR, errorType + ": " + errorMsg, errorObj)
-            console.log(javaScriptErrorInfo)
+            // 进入队列
+            queue.pushToQueue(javaScriptErrorInfo)
         }
 
         let jsMonitorStarted;
@@ -61,6 +64,7 @@ export default class jsLog {
             let errorStack = errorObj ? errorObj.stack : null
             siftAndMakeUpMessage(errorMsg, url, lineNumber, columnNumber, errorStack)
         }
+
         window.onunhandledrejection = (event) => {
             /** @type {string} */
             let errorMessage = ""
@@ -68,7 +72,7 @@ export default class jsLog {
             let th_field = ""
             th_field = "object" == typeof event.reason ? (errorMessage = event.reason.message, event.reason.stack) : (errorMessage = event.reason, "")
             let url = util.o
-            th_field ? siftAndMakeUpMessage(errorMessage, url, 0, 0, "UncaughtInPromiseError: " + th_field) : null
+            th_field ? siftAndMakeUpMessage(errorMessage, url, 0, 0, "UncaughtInPromiseError: " + th_field) : _
         }
     }
 
@@ -87,6 +91,5 @@ export default class jsLog {
         obj.browserInfo = ''
         return obj
     }
-
 
 }
