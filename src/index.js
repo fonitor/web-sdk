@@ -30,7 +30,7 @@ export default class Monitor {
         Queue.getInstance('web', queueConfig)
 
         this.init()
-        // this.content()
+        this.content()
         this.run()
     }
 
