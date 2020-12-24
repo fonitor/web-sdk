@@ -17,10 +17,10 @@ export default class pageLog {
      * @return {?}
      */
     static getInstance() {
-        if (!Page.instance) {
-            Page.instance = new Page()
+        if (!pageLog.instance) {
+            pageLog.instance = new pageLog()
         }
-        return Page.instance
+        return pageLog.instance
     }
 
     /**

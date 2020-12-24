@@ -1,6 +1,6 @@
 import Util from "../util/index"
 import * as error from '../config/index'
-import Queue from "../queue"
+import Queue from "../queue/index"
 
 const util = Util.getInstance(),
     cache = []
