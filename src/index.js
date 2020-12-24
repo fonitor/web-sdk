@@ -16,21 +16,26 @@ export default class Monitor {
      */
     constructor(options) {
         // 初始化框架基础参数
-        this.options = (options === null || options === undefined || options === "") ? options : {}
+        this.options = (options === null || options === undefined || options === "") ?  options : {}
 
         let utilConfig = {
             monitorUser: this.options.monitorUser || {},
-            WEB_MONITOR_ID: this.options.WEB_MONITOR_ID || ""
+            WEB_MONITOR_ID: this.options.WEB_MONITOR_ID || "",
         }
 
         let queueConfig = {
             synRequestNum: this.options.synRequestNum || null
         }
+        console.log(utilConfig)
+        
         util = Util.getInstance(utilConfig)
+        util.WEB_BASE_URL = options.monitorBaseUrl || ""
         Queue.getInstance('web', queueConfig)
 
+        window.localStorage.setItem('monitorTimeout', options.monitorTimeout || 5000)
+
         this.init()
-        this.content()
+        // this.content()
         this.run()
     }
 
