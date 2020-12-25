@@ -30,9 +30,8 @@ export default class Monitor {
         
         util = Util.getInstance(utilConfig)
         util.WEB_BASE_URL = options.monitorBaseUrl || ""
+        util.WEB_API_TIME_OUT = options.monitorTimeout || 5000
         Queue.getInstance('web', queueConfig)
-
-        window.localStorage.setItem('monitorTimeout', options.monitorTimeout || 5000)
 
         this.init()
         // this.content()
